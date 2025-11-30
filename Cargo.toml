@@ -1,6 +1,14 @@
-[package]
-name = "data-structures-and-algorithms"
-version = "0.1.0"
-edition = "2024"
+# Virtual manifest for all the sub-projects
 
-[dependencies]
+[workspace]
+resolver = "3" # has to be explicit in workspaces; read about this later
+members = ["exercises/*"]
+
+[workspace.package]
+# keys that can be inherited by members of the workspace
+version = "0.1.0"
+description = "Practice basic CS"
+
+[workspace.dependencies]
+# dependencies shared by all members of the workspace
+
