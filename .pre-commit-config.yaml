@@ -1,0 +1,20 @@
+repos:
+  - repo: local
+    hooks:
+      - id: cargo-fmt
+        name: cargo fmt --check
+        entry: cargo fmt -- --check
+        language: system
+        types: [rust]
+        # turn off passing filenames since cargo fmt works on the whole project
+        pass_filenames: false
+
+      - id: cargo-clippy
+        name: cargo clippy -- -D warnings
+        entry: cargo clippy -- -D warnings
+        language: system
+        types: [rust]
+        # turn off passing filenames since cargo clippy works on the whole project
+        pass_filenames: false
+
+
