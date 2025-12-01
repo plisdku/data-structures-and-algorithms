@@ -1,5 +1,8 @@
-use maximum_subsequence_sum::{generate_random_integers, max_sub_sum_cubic, max_sub_sum_quadratic, max_sub_sum_nlogn, max_sub_sum_linear};
-
+#[allow(unused_imports)]
+use maximum_subsequence_sum::{
+    generate_random_integers, max_sub_sum_cubic, max_sub_sum_linear, max_sub_sum_nlogn,
+    max_sub_sum_quadratic,
+};
 
 fn main() {
     println!("Maximum subsequence sum!");
