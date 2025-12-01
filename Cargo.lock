@@ -5,3 +5,7 @@ version = 4
 [[package]]
 name = "hello-world"
 version = "0.1.0"
+
+[[package]]
+name = "maximum-subsequence-sum"
+version = "0.1.0"
