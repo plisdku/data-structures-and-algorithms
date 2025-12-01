@@ -140,19 +140,23 @@ fn max_sub_sum_linear(array: &[i32]) -> i32 {
 fn main() {
     println!("Maximum subsequence sum!");
 
+    let functions = [
+        max_sub_sum_cubic,
+        max_sub_sum_quadratic,
+        max_sub_sum_nlogn,
+        max_sub_sum_linear,
+    ];
+
     // let r = generate_random_integers(10, 3, 4);
 
     // let r = vec![1, 2, 3, -100, 4, 5];
     let r = [1i32, 2, 3, -100, 4, 5];
 
-    // let s = max_sub_sum_cubic(&r);
+    for fun in functions {
+        let s = fun(&r);
 
-    // let s = max_sub_sum_quadratic(&r);
-
-    // let s = max_sub_sum_nlogn(&r);
-    let s = max_sub_sum_linear(&r);
-
-    println!("Max subsequence sum = {}", s);
+        println!("Max subsequence sum = {}", s);
+    }
 
     for rr in r {
         println!("{}", rr);
