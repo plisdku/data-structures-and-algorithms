@@ -6,3 +6,10 @@ description.workspace = true
 
 [dependencies]
 rand = "0.8"
+
+[dev-dependencies]
+criterion = "0.5.1"
+
+[[bench]]
+name = "bench_sum"
+harness = false # disable the standard benchmark harness

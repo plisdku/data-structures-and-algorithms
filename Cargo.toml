@@ -12,3 +12,6 @@ description = "Practice basic CS"
 [workspace.dependencies]
 # dependencies shared by all members of the workspace
 
+# THIS DOES NOT WORK. sorry
+# [workspace.dev-dependencies]
+# criterion = "0.5.1"
