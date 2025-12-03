@@ -18,7 +18,7 @@ pub enum DumbList {
 //
 // where I guess "junk" means there is wasted space because every type in
 // DumbList has the same size.
-// 
+//
 // The book recommends we might want something more lightweight:
 //
 // [ptr] -> (Elem A, ptr) -> (Elem B, null)
@@ -26,21 +26,20 @@ pub enum DumbList {
 // to save space.
 //
 
-
 // After fits and starts we end up with this:
 
 pub struct List {
-    head: Link
+    head: Link,
 }
 
 struct Node {
     elem: i32,
-    next: Link
+    next: Link,
 }
 
 enum Link {
     Empty,
-    More(Box<Node>)
+    More(Box<Node>),
 }
 
 impl List {
@@ -52,13 +51,12 @@ impl List {
     pub fn push(&mut self, elem: i32) {
         let node = Node {
             elem,
-            next: mem::replace(&mut self.head, Link::Empty)
+            next: mem::replace(&mut self.head, Link::Empty),
         };
         self.head = Link::More(Box::new(node));
     }
 
     pub fn pop(&mut self) -> Option<i32> {
-
         // once we OWN the old head link, everything becomes very simple.
         let old_head = mem::replace(&mut self.head, Link::Empty);
 
@@ -70,10 +68,8 @@ impl List {
             println!("popping and we don't have more");
             None
         }
-
     }
 }
-
 
 #[cfg(test)]
 mod test {
@@ -97,7 +93,3 @@ mod test {
         assert_eq!(l.pop(), Some(0));
     }
 }
-
-
-
-
